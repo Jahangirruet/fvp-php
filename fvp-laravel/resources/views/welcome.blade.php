@@ -1,132 +1,2217 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/custom.js') }}"></script>
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--tw-bg-opacity: 1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gray-100{--tw-bg-opacity: 1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.border-gray-200{--tw-border-opacity: 1;border-color:rgb(229 231 235 / var(--tw-border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.text-center{text-align:center}.text-gray-200{--tw-text-opacity: 1;color:rgb(229 231 235 / var(--tw-text-opacity))}.text-gray-300{--tw-text-opacity: 1;color:rgb(209 213 219 / var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity: 1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-700{--tw-text-opacity: 1;color:rgb(55 65 81 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity: 1;color:rgb(17 24 39 / var(--tw-text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--tw-bg-opacity: 1;background-color:rgb(31 41 55 / var(--tw-bg-opacity))}.dark\:bg-gray-900{--tw-bg-opacity: 1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:border-gray-700{--tw-border-opacity: 1;border-color:rgb(55 65 81 / var(--tw-border-opacity))}.dark\:text-white{--tw-text-opacity: 1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-gray-400{--tw-text-opacity: 1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-gray-500{--tw-text-opacity: 1;color:rgb(107 114 128 / var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-500"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" /></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
-            </div>
+</head>
+    <body
+    class="font-quicksand font-normal bg-[url(../images/homepage-background.png)] bg-cover bg-no-repeat"
+  >
+    <div class="py-3 sm:py-4 bg-gradient-to-r from-primary to-secondary px-4">
+      <div class="container mx-auto">
+        <div
+          class="sm:gap-3 flex flex-wrap gap-1.5 justify-between items-center"
+        >
+          <a
+            href="#"
+            class="hidden md:flex gap-1.5 sm:gap-2 text-white items-center text-sm sm:text-base lg:text-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+              />
+            </svg>
+            <span>Email: support@fxvps.pro</span>
+          </a>
+          <ul class="sm:gap-3 flex gap-1.5 flex-wrap md:gap-6 items-center">
+            <li>
+              <a
+                href="#"
+                class="flex gap-1.5 sm:gap-2 text-white items-center text-sm sm:text-base lg:text-lg"
+              >
+                <img src="./images/blogs.svg" alt="blogs.svg" />
+                <span>Blogs </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex gap-1.5 sm:gap-2 text-white items-center text-sm sm:text-base lg:text-lg"
+              >
+                <img src="./images/cart.svg" alt="cart.svg" />
+                <span>View Cart </span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="flex gap-1.5 sm:gap-2 text-white items-center text-sm sm:text-base lg:text-lg"
+              >
+                <img src="./images/lang.svg" alt="lang.svg" />
+                <span>Choose Language </span>
+              </a>
+            </li>
+          </ul>
         </div>
-    </body>
+      </div>
+    </div>
+    <header
+      class="navigation header relative z-30 bg-transparent top-0 transition-all duration-200"
+    >
+      <div class="px-4">
+        <div class="mx-auto container">
+          <div class="relative flex items-center justify-between gap-5 py-4">
+            <a href="#" class="relative shrink-0">
+              <figure>
+                <img class="w-32" src="./images/logo.svg" alt="logo.svg" />
+              </figure>
+            </a>
+            <nav
+              class="ease fixed -right-[999px] top-0 flex h-full w-72 flex-col justify-start gap-5 bg-white px-10 pt-20 transition-all duration-300 xl:static xl:w-full xl:items-center xl:justify-center xl:bg-transparent xl:px-0 xl:pt-0"
+              id="navbar"
+            >
+              <button
+                type="button"
+                id="close"
+                class="xl:hidden w-8 h-8 absolute top-0 -left-7 bg-white p-1"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="flex flex-col gap-8 xl:flex-row xl:items-center xl:gap-5 2xl:gap-10"
+              >
+                <li>
+                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                    >VPS PLANS
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                    >BROKER LATENCY</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                    >EXCL VPS</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                    >DEDICATED SERVER</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                    >AFFILIATE</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                    >FREE VPS</a
+                  >
+                </li>
+                <li class="xl:hidden flex">
+                  <a
+                    href="#"
+                    class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+                  >
+                    <span
+                      class="flex h-full w-full items-center gap-2 rounded-full bg-white py-1 px-6 sm:py-2.5 transition-all group-hover:bg-transparent sm:px-10"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6 group-hover:stroke-white"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+                        />
+                      </svg>
+                      <span class="group-hover:text-white">Login</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="shrink-0">
+              <ul class="flex gap-3 items-center justify-end">
+                <li class="xl:flex hidden">
+                  <a
+                    href="#"
+                    class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+                  >
+                    <span
+                      class="flex h-full w-full items-center gap-2 rounded-full bg-white py-1 px-6 sm:py-2.5 transition-all group-hover:bg-transparent sm:px-10"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6 group-hover:stroke-white"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+                        />
+                      </svg>
+                      <span class="group-hover:text-white">Login</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="shrink-0 xl:hidden">
+                  <button
+                    type="button"
+                    id="burger"
+                    class="border-0 bg-transparent"
+                  >
+                    <svg
+                      class="stroke-primary"
+                      width="26"
+                      height="22"
+                      viewBox="0 0 18 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1H17M1 7H17M1 13H17"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mobile-overlay fixed left-0 top-0 right-0 bottom-0 z-50 hidden h-full w-full bg-black bg-opacity-30 transition-all duration-500 ease-in-out xl:hidden"
+        ></div>
+      </div>
+    </header>
+    <main>
+      <section class="px-4 overflow-x-clip py-5">
+        <div class="container mx-auto">
+          <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-6/12 pt-5 lg:pt-14">
+              <div class="swiper banner">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide pb-14 space-y-3 lg:space-y-6">
+                    <h1
+                      class="font-fredoka text-black text-[28px] md:text-[40px] 2xl:text-[3rem] leading-none"
+                    >
+                      Ultra Fast Forex Trading VPS
+                    </h1>
+                    <p
+                      class="text-lg md:text-xl 2xl:text-2xl text-black xl:pr-20 2xl:pr-32"
+                    >
+                      Pro Windows Fx VPS for EA Trading, Ctrader,Low Latency
+                      Trading .
+                    </p>
+                    <div
+                      class="flex flex-wrap xl:flex-nowrap xl:gap-5 gap-3 pt-2"
+                    >
+                      <div class="xl:space-y-5 space-y-3 min-w-[250px]">
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            Latest Hardware Tech.
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            Support All Broker & MT4.
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            High Performance Server.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="xl:space-y-5 space-y-3">
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            24/7,Customer Support.
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            100% Uptime Guarantee.
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            3 Days Partial Moneyback Guarantee.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-4 pt-2">
+                      <a
+                        href="#"
+                        class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-xl font-normal text-black"
+                      >
+                        <span
+                          class="flex h-full w-full items-center gap-2 rounded-full bg-white py-2 px-5 sm:py-3.5 transition-all group-hover:bg-transparent md:px-8 lg:px-10"
+                        >
+                          <span class="group-hover:text-white"
+                            >Register Now</span
+                          >
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="hover:text-primary hover:font-bold p-1 text-xl font-normal text-black"
+                        >View Services
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide space-y-3 pb-14 lg:space-y-6">
+                    <h1
+                      class="font-fredoka text-black text-[28px] md:text-[40px] 2xl:text-[3rem] leading-none"
+                    >
+                      EXCL WINDOWS FX VPS
+                    </h1>
+                    <p
+                      class="text-lg md:text-xl 2xl:text-2xl text-black xl:pr-20 2xl:pr-32"
+                    >
+                      Get our big RAM & Space VPS with full RDP
+                    </p>
+                    <div
+                      class="flex flex-wrap xl:flex-nowrap xl:gap-5 gap-3 pt-2"
+                    >
+                      <div class="xl:space-y-5 space-y-3 min-w-[250px]">
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            Latest Hardware Tech.
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            High Performance Servers
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            Dedicated Environments
+                          </p>
+                        </div>
+                      </div>
+                      <div class="xl:space-y-5 space-y-3">
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            KVM/Hyper-V/XEN Virtualization
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            24/7,Customer Support
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            99.9% Uptime Guarantee
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-4 pt-2">
+                      <a
+                        href="#"
+                        class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-xl font-normal text-black"
+                      >
+                        <span
+                          class="flex h-full w-full items-center gap-2 rounded-full bg-white py-2 px-6 sm:py-3.5 transition-all group-hover:bg-transparent md:px-8 lg:px-10"
+                        >
+                          <span class="group-hover:text-white"
+                            >Register Now</span
+                          >
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="hover:text-primary hover:font-bold p-1 text-xl font-normal text-black"
+                        >View Services
+                      </a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide space-y-3 pb-14 lg:space-y-6">
+                    <h1
+                      class="font-fredoka text-black text-[28px] md:text-[40px] 2xl:text-[3rem] leading-none"
+                    >
+                      Premium Dedicated Server
+                    </h1>
+                    <p
+                      class="text-lg md:text-xl 2xl:text-2xl text-black xl:pr-20 2xl:pr-32"
+                    >
+                      Get Fully Managed High End Dedicated Server from FxVps Pro
+                    </p>
+                    <div
+                      class="flex flex-wrap xl:flex-nowrap xl:gap-5 gap-3 pt-2"
+                    >
+                      <div class="xl:space-y-5 space-y-3 min-w-[250px]">
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">SuperMicro Server</p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">Enterprise Hardware</p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">Full Server Control</p>
+                        </div>
+                      </div>
+                      <div class="xl:space-y-5 space-y-3">
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">Premium Bandwidth</p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            1 Gbps Dedicated Port
+                          </p>
+                        </div>
+                        <div class="flex gap-3 items-center">
+                          <img src="./images/circle.svg" alt="circle.svg" />
+                          <p class="text-lg text-black">
+                            99.9% Uptime Guarantee
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-4 pt-2">
+                      <a
+                        href="#"
+                        class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-xl font-normal text-black"
+                      >
+                        <span
+                          class="flex h-full w-full items-center gap-2 rounded-full bg-white py-2 px-6 sm:py-3.5 transition-all group-hover:bg-transparent md:px-8 lg:px-10"
+                        >
+                          <span class="group-hover:text-white"
+                            >Register Now</span
+                          >
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="hover:text-primary hover:font-bold p-1 text-xl font-normal text-black"
+                        >View Services
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination flex justify-center"></div>
+              </div>
+            </div>
+            <div class="w-full md:w-6/12 px-6 xl:pl-20">
+              <figure class="md:-mr-5">
+                <img
+                  class="w-full"
+                  src="./images/Character.png"
+                  alt="Character.png"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for plant section  -->
+      <section class="sm:px-4 pt-10 md:pt-20 pb-7">
+        <div class="container mx-auto">
+          <div
+            class="sm:rounded-2xl w-full md:rounded-[3.5rem] border border-gray-300 bg-white bg-opacity-50 px-4 md:px-12 py-6 sm:py-14"
+          >
+            <div
+              class="w-full grid grid-cols-2 md:grid-cols-3 place-items-center 2xl:flex justify-center 2xl:flex-nowrap gap-x-4 gap-y-5 md:gap-8"
+            >
+              <div class="flex items-start gap-2 flex-col sm:flex-row">
+                <figure class="shrink-0">
+                  <img src="./images/window.png" alt="window" />
+                </figure>
+                <div class="space-y-4">
+                  <h2
+                    class="text-xl sm:text-2xl leading-none text-black font-bold"
+                  >
+                    BASIC
+                  </h2>
+                  <ul class="grid gap-2">
+                    <li class="font-normal text-black text-sm">
+                      BASIC 512MB Dedicated RAM
+                    </li>
+                    <li class="font-normal text-black text-sm">
+                      16GB Disk Space
+                    </li>
+                    <li class="font-bold text-sm text-primary">
+                      $3.00 / Month
+                    </li>
+                    <li class="font-normal text-black text-sm">1 Core CPU</li>
+                  </ul>
+                  <a
+                    href="#"
+                    class="inline-block px-5 text-sm py-2.5 border text-secondary font-medium rounded-full border-secondary hover:bg-secondary hover:text-white transition-all"
+                    >Order Now</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-2 flex-col sm:flex-row">
+                <figure class="shrink-0">
+                  <img src="./images/window.png" alt="window" />
+                </figure>
+                <div class="space-y-4">
+                  <h2
+                    class="text-xl sm:text-2xl leading-none text-black font-bold"
+                  >
+                    STANDARD
+                  </h2>
+                  <ul class="grid gap-2">
+                    <li class="font-normal text-black text-sm">
+                      1GB Dedicated RAM
+                    </li>
+                    <li class="font-normal text-black text-sm">
+                      16GB Disk Space
+                    </li>
+                    <li class="font-bold text-sm text-primary">
+                      $5.90 / Month
+                    </li>
+                    <li class="font-normal text-black text-sm">1 Core CPU</li>
+                  </ul>
+                  <a
+                    href="#"
+                    class="inline-block px-5 text-sm py-2.5 border text-secondary font-medium rounded-full border-secondary hover:bg-secondary hover:text-white transition-all"
+                    >Order Now</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-2 flex-col sm:flex-row">
+                <figure class="shrink-0">
+                  <img src="./images/window.png" alt="window" />
+                </figure>
+                <div class="space-y-4">
+                  <h2
+                    class="text-xl sm:text-2xl leading-none text-black font-bold"
+                  >
+                    PROFESSIONAL
+                  </h2>
+                  <ul class="grid gap-2">
+                    <li class="font-normal text-black text-sm">
+                      2GB Dedicated RAM
+                    </li>
+                    <li class="font-normal text-black text-sm">
+                      22GB Disk Space
+                    </li>
+                    <li class="font-bold text-sm text-primary">
+                      $9.50 / Month
+                    </li>
+                    <li class="font-normal text-black text-sm">2 Core CPU</li>
+                  </ul>
+                  <a
+                    href="#"
+                    class="inline-block px-5 text-sm py-2.5 border text-secondary font-medium rounded-full border-secondary hover:bg-secondary hover:text-white transition-all"
+                    >Order Now</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-2 flex-col sm:flex-row">
+                <figure class="shrink-0">
+                  <img src="./images/window.png" alt="window" />
+                </figure>
+                <div class="space-y-4">
+                  <h2
+                    class="text-xl sm:text-2xl leading-none text-black font-bold"
+                  >
+                    ENTERPRISE
+                  </h2>
+                  <ul class="grid gap-2">
+                    <li class="font-normal text-black text-sm">
+                      3GB Dedicated RAM
+                    </li>
+                    <li class="font-normal text-black text-sm">
+                      27GB Disk Space
+                    </li>
+                    <li class="font-bold text-sm text-primary">$13.90/Month</li>
+                    <li class="font-normal text-black text-sm">2 Core CPU</li>
+                  </ul>
+                  <a
+                    href="#"
+                    class="inline-block px-5 text-sm py-2.5 border text-secondary font-medium rounded-full border-secondary hover:bg-secondary hover:text-white transition-all"
+                    >Order Now</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-2 flex-col sm:flex-row">
+                <figure class="shrink-0">
+                  <img src="./images/window.png" alt="window" />
+                </figure>
+                <div class="space-y-4">
+                  <h2
+                    class="text-xl sm:text-2xl leading-none text-black font-bold"
+                  >
+                    CORPORATE
+                  </h2>
+                  <ul class="grid gap-2">
+                    <li class="font-normal text-black text-sm">
+                      4GB Dedicated RAM
+                    </li>
+                    <li class="font-normal text-black text-sm">
+                      35GB Disk Space
+                    </li>
+                    <li class="font-bold text-sm text-primary">$18.90/Month</li>
+                    <li class="font-normal text-black text-sm">3 Core CPU</li>
+                  </ul>
+                  <a
+                    href="#"
+                    class="inline-block px-5 text-sm py-2.5 border text-secondary font-medium rounded-full border-secondary hover:bg-secondary hover:text-white transition-all"
+                    >Order Now</a
+                  >
+                </div>
+              </div>
+              <div class="flex items-start gap-2 flex-col sm:flex-row">
+                <figure class="shrink-0">
+                  <img src="./images/window.png" alt="window" />
+                </figure>
+                <div class="space-y-4">
+                  <h2
+                    class="text-xl sm:text-2xl leading-none text-black font-bold"
+                  >
+                    Custom
+                  </h2>
+                  <ul class="grid gap-2">
+                    <li class="font-normal text-black text-sm">
+                      4GB Dedicated RAM
+                    </li>
+                    <li class="font-normal text-black text-sm">
+                      35GB Disk Space
+                    </li>
+                    <li class="font-bold text-sm text-primary">$18.90/Month</li>
+                    <li class="font-normal text-black text-sm">3 Core CPU</li>
+                  </ul>
+                  <a
+                    href="#"
+                    class="inline-block px-5 text-sm py-2.5 border text-secondary font-medium rounded-full border-secondary hover:bg-secondary hover:text-white transition-all"
+                    >Order Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for Choose The Most Suitable Forex section  -->
+      <section class="px-4 pb-8 sm:pb-12 pt-14 sm:pt-20">
+        <div class="container mx-auto space-y-12 xl:px-32">
+          <h2
+            class="text-[28px] lg:text-[2.6rem] leading-[1.3] font-fredoka text-black text-center"
+          >
+            Choose The Most Suitable Forex VPS Hosting Plan for
+            <span
+              class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+            >
+              Trading</span
+            >
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 2xl:gap-12">
+            <div
+              class="px-8 pt-24 rounded-[3rem] pb-14 space-y-4 flex justify-center items-center flex-col bg-opacity-50 bg-white border border-gray-300"
+            >
+              <h3 class="text-black text-3xl text-center font-fredoka">
+                REGULAR VPS
+              </h3>
+              <figure>
+                <img
+                  src="./images/bookmark-fav-dynamic-premium.png"
+                  alt="bookmark-fav-dynamic-premium.png"
+                />
+              </figure>
+              <h4 class="font-bold text-primary text-center text-2xl">
+                From $3.00/Month
+              </h4>
+              <p class="text-base text-black text-center !leading-[1.7]">
+                Choose your desired regular windows VPS plans for mt4/mt5 EA
+                trading, auto-copy trading etc. Our Web regular windows VPS
+                plans will give you rock-solid fast trading experience.
+              </p>
+              <div class="flex justify-center">
+                <a
+                  href="#"
+                  class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+                >
+                  <span
+                    class="flex h-full w-full items-center gap-2 rounded-full bg-white py-1.5 px-6 sm:py-2 transition-all group-hover:bg-transparent lg:px-8"
+                  >
+                    <span class="group-hover:text-white">Compare Plans</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="px-8 pt-24 rounded-[3rem] pb-14 space-y-4 flex justify-center items-center flex-col bg-opacity-50 bg-white border border-gray-300"
+            >
+              <h3 class="text-black text-3xl text-center font-fredoka">
+                REGULAR VPS
+              </h3>
+              <figure>
+                <img
+                  src="./images/bell-dynamic-premium.png"
+                  alt="bell-dynamic-premium.png"
+                />
+              </figure>
+              <h4 class="font-bold text-primary text-center text-2xl">
+                From $19.90/Month
+              </h4>
+              <p class="text-base text-black text-center !leading-[1.7]">
+                Gain increased power, big space and RAM, 6+ core CPU. Our
+                exclusive VPS package comes with hyper-v virtualizations in
+                datacenter editions Windows OS for fully dedicated environment.
+              </p>
+              <div class="flex justify-center">
+                <a
+                  href="#"
+                  class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+                >
+                  <span
+                    class="flex h-full w-full items-center gap-2 rounded-full bg-white py-1.5 px-6 sm:py-2 transition-all group-hover:bg-transparent lg:px-8"
+                  >
+                    <span class="group-hover:text-white">Compare Plans</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="px-8 pt-24 rounded-[3rem] pb-14 space-y-4 flex justify-center items-center flex-col bg-opacity-50 bg-white border border-gray-300"
+            >
+              <h3 class="text-black text-3xl text-center font-fredoka">
+                REGULAR VPS
+              </h3>
+              <figure>
+                <img
+                  src="./images/trophy-dynamic-premium.png"
+                  alt="trophy-dynamic-premium.png"
+                />
+              </figure>
+              <h4 class="font-bold text-primary text-center text-2xl">
+                From $12.90/Month
+              </h4>
+              <p class="text-base text-black text-center !leading-[1.7]">
+                Gain maximum ultra speed and very low latency from your broker ,
+                choose your server locations or send us of your broker name , we
+                will provide you the VPS near to your broker's server location.
+              </p>
+              <div class="flex justify-center">
+                <a
+                  href="#"
+                  class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+                >
+                  <span
+                    class="flex h-full w-full items-center gap-2 rounded-full bg-white py-1.5 px-6 sm:py-2 transition-all group-hover:bg-transparent lg:px-8"
+                  >
+                    <span class="group-hover:text-white">Compare Plans</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for Information section  -->
+      <section class="sm:px-4 pt-6 md:pt-10 pb-10">
+        <div class="container mx-auto">
+          <div
+            class="sm:rounded-2xl w-full md:rounded-[3.5rem] border border-gray-300 bg-white bg-opacity-50 px-4 md:px-16 py-6 sm:py-14"
+          >
+            <div
+              class="w-full grid grid-cols-2 md:grid-cols-3 place-items-center 2xl:grid-cols-6 gap-x-4 gap-y-5 md:gap-8"
+            >
+              <div
+                class="rounded-2xl space-y-2 w-full sm:rounded-[3.5rem] border border-gray-300 bg-white py-10 px-3 sm:px-6 flex flex-col justify-center items-center"
+              >
+                <figure>
+                  <img
+                    src="./images/Flash_drive_perspective_matte.png"
+                    alt="Flash_drive_perspective_matte.png"
+                  />
+                </figure>
+                <h2
+                  class="text-xl sm:text-2xl font-bold text-black text-center"
+                >
+                  100%
+                </h2>
+                <p class="text-center text-base font-normal">Disk Space</p>
+              </div>
+              <div
+                class="rounded-2xl space-y-2 w-full sm:rounded-[3.5rem] border border-gray-300 bg-white py-10 px-3 sm:px-6 flex flex-col justify-center items-center"
+              >
+                <figure>
+                  <img
+                    src="./images/Settings_perspective_matte.png"
+                    alt="Settings_perspective_matte.png"
+                  />
+                </figure>
+                <h2
+                  class="text-xl sm:text-2xl font-bold text-black text-center"
+                >
+                  Setup TIme
+                </h2>
+                <p class="text-center text-base font-normal">Max 1 Hour</p>
+              </div>
+              <div
+                class="rounded-2xl space-y-2 w-full sm:rounded-[3.5rem] border border-gray-300 bg-white py-10 px-3 sm:px-6 flex flex-col justify-center items-center"
+              >
+                <figure>
+                  <img
+                    src="./images/Stopwatch_perspective_matte.png"
+                    alt="Stopwatch_perspective_matte.png"
+                  />
+                </figure>
+                <h2
+                  class="text-xl sm:text-2xl font-bold text-black text-center"
+                >
+                  Uptime
+                </h2>
+                <p class="text-center text-base font-normal">100% Guaranteed</p>
+              </div>
+              <div
+                class="rounded-2xl space-y-2 w-full sm:rounded-[3.5rem] border border-gray-300 bg-white py-10 px-3 sm:px-6 flex flex-col justify-center items-center"
+              >
+                <figure>
+                  <img src="./images/window.png" alt="window.png" />
+                </figure>
+                <h2
+                  class="text-xl sm:text-2xl font-bold text-black text-center"
+                >
+                  RDP
+                </h2>
+                <p class="text-center text-base font-normal">Full Access</p>
+              </div>
+              <div
+                class="rounded-2xl space-y-2 w-full sm:rounded-[3.5rem] border border-gray-300 bg-white py-10 px-3 sm:px-6 flex flex-col justify-center items-center"
+              >
+                <figure>
+                  <img
+                    src="./images/perspective_matte.png"
+                    alt="perspective_matte.png"
+                  />
+                </figure>
+                <h2
+                  class="text-xl sm:text-2xl font-bold text-black text-center"
+                >
+                  24/7
+                </h2>
+                <p class="text-center text-base font-normal">Live Support</p>
+              </div>
+              <div
+                class="rounded-2xl space-y-2 w-full sm:rounded-[3.5rem] border border-gray-300 bg-white py-10 px-3 sm:px-6 flex flex-col justify-center items-center"
+              >
+                <figure>
+                  <img
+                    src="./images/Increase_perspective_matte.png"
+                    alt="Increase_perspective_matte.png"
+                  />
+                </figure>
+                <h2
+                  class="text-xl sm:text-2xl font-bold text-black text-center"
+                >
+                  Optimized
+                </h2>
+                <p class="text-center text-base font-normal">
+                  For Forex Trading
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for Information section  -->
+      <div class="px-4 pb-12 lg:pb-20 pt-6 md:pt-8">
+        <div class="container mx-auto">
+          <div
+            class="flex flex-col-reverse md:flex-row justify-between gap-6 md:gap-10 lg:gap-20 md:items-center"
+          >
+            <article class="space-y-3 max-w-[1050px]">
+              <h2
+                class="text-[28px] lg:text-[2.6rem] leading-[1.3] font-fredoka text-black text-left"
+              >
+                Why Forex VPS is
+                <span
+                  class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+                >
+                  Essential</span
+                >
+                for You?
+              </h2>
+              <p class="text-base sm:text-lg !leading-[1.6] sm:!leading-[1.9]">
+                A quality VPS service holds onto definite key factors that can
+                hand the user a wide range of profits. Those facilities could be
+                a dedicated VPS service, 24/7 support capability, optimized
+                trading platform supportability, etc. Fx VPS Pro has been
+                strictly maintaining the hallmark of strong technical &
+                professional reliability in forex VPS hosting from its very
+                first day.
+              </p>
+            </article>
+            <figure class="shrink-0">
+              <img
+                src="./images/crown-dynamic-color.png"
+                alt="crown-dynamic-color.png"
+              />
+            </figure>
+          </div>
+          <div class="max-w-[1200px] pt-10">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-x-12 md:gap-y-8"
+            >
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Effective Hosting
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Forex VPS pro will introduce you with ultra-fast hosting
+                    experience. It could be any platform or website; this VPS
+                    can deliver 3x faster speed than the regular server.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Optimized for MT4/MT5 Trading
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Our servers are technically optimized to run meta trader
+                    trading accounts. Forex trading is going to be smooth &
+                    uninterrupted with Fx VPS servers.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Ultra-Low Latency
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Forex VPS possesses the capacity of delivering the latency
+                    in a millisecond. Our data centers are located at New York,
+                    London, Amsterdam, Montreal to ensure shortest latency time.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Latest Hardware Technology
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Forex VPS servers are featured with SSD (Solid State Disk)
+                    RAID-10 adroitness. This powerful feature will enhance the
+                    speed of hosted website quality to a great extent.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    100% Uptime
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Fx VPS guarantees 100% uptime at any cost. Even the time of
+                    power outage your business platform will remain fully
+                    operational.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Continuous Security & Backup
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Our servers own enough technical resource to prevent any
+                    sort of security breach or cyber-attack. Our backup
+                    system(DDoS) will keep your data intact.
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 pt-12">
+              <a
+                href="#"
+                class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+              >
+                <span
+                  class="flex h-full w-full items-center gap-2 rounded-full bg-white py-2 px-6 sm:py-3.5 transition-all group-hover:bg-transparent md:px-8 lg:px-10"
+                >
+                  <span class="group-hover:text-white">Choose Your Plan</span>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="hover:text-primary hover:font-bold p-1 text-lg font-normal text-black"
+              >
+                Register
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- start coding for Choose The Most Suitable Forex section  -->
+      <section class="sm:px-4 pb-8 sm:pb-12 pt-14 lg:pt-20 overflow-x-clip">
+        <div class="container mx-auto space-y-12">
+          <h2
+            class="text-[28px] lg:text-[2.6rem] leading-[1.3] font-fredoka text-black text-center"
+          >
+            Benefits of Using Our
+            <span
+              class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+            >
+              Feature</span
+            >
+            Services
+          </h2>
+          <div
+            class="px-4 py-10 md:py-24 sm:rounded-[3rem] bg-opacity-50 bg-white border border-gray-300 relative"
+          >
+            <figure
+              class="flex justify-center md:absolute md:-top-20 md:-right-20 pb-8 md:pb-0"
+            >
+              <img
+                src="./images/medal-dynamic-premium.png"
+                alt="medal-dynamic-premium.png"
+              />
+            </figure>
+            <div
+              class="max-w-[1050px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-x-16 md:gap-y-8"
+            >
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle-blue.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Free Installation
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Our honored clients will get free installation &
+                    high-quality tech support from the beginning to the last day
+                    of our contract.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle-blue.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Refund Policy
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    In forex VPS you are getting 3 days partial money back
+                    guarantee in case the service is not up to your expected
+                    level.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle-blue.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Dedicated Customer Support
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Forex VPS client support team is available 24/7/365 at your
+                    service. While facing any technical difficulties you can
+                    contact our team without any hesitation.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle-blue.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Dedicated Server Plan
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    The dedicated server plans are set for pro traders who want
+                    their trading platform singly running for one purpose only.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle-blue.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Reseller Plan
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    As an affiliate service, you will be rewarded with 5% to 20
+                    % commission for every successful server selling on your
+                    reference.
+                  </p>
+                </article>
+              </div>
+              <div class="flex gap-3 items-start">
+                <figure class="shrink-0 mt-2">
+                  <img src="./images/circle-blue.svg" alt="circle" />
+                </figure>
+                <article class="space-y-4">
+                  <h3 class="text-xl lg:text-2xl font-bold text-black">
+                    Affordable Server Price
+                  </h3>
+                  <p class="text-dark text-base md:text-lg">
+                    Potential clients are getting access to the desired package
+                    at a lower price than the usual market price.
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div class="flex justify-center items-center gap-3 sm:gap-4 pt-12">
+              <a
+                href="#"
+                class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+              >
+                <span
+                  class="flex h-full w-full items-center gap-2 rounded-full bg-white py-2 px-4 sm:py-3.5 transition-all group-hover:bg-transparent md:px-8 lg:px-10"
+                >
+                  <span class="group-hover:text-white">Choose Your Plan</span>
+                </span>
+              </a>
+              <a
+                href="#"
+                class="hover:text-primary hover:font-bold p-1 text-lg font-normal text-black"
+              >
+                Register Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for Choose The Most Suitable Forex section  -->
+      <section
+        class="px-4 pb-8 sm:pb-12 pt-8 sm:pt-12 lg:pt-16 overflow-x-clip"
+      >
+        <div class="container mx-auto">
+          <div
+            class="flex flex-col md:flex-row gap-10 md:px-0 lg:gap-10 2xl:gap-20 items-center"
+          >
+            <div class="w-full md:w-7/12 space-y-6 lg:space-y-10">
+              <div class="space-y-3">
+                <h2
+                  class="text-[28px] lg:text-[2.6rem] leading-[1.3] font-fredoka text-black text-left"
+                >
+                  Forex
+                  <span
+                    class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+                  >
+                    Dedicated
+                  </span>
+                  Server
+                </h2>
+                <p class="text-base md:text-lg text-black !leading-[1.8]">
+                  Forex VPS offers a full dedicated server to its clients.
+                  Rather than a leap service we act as according to our featured
+                  criteria. That’s why we give full dedication & effort to
+                  ensure our dedicating service quality. The factors we
+                  emphasize on to keep our service dedicated are in the
+                  following;
+                </p>
+              </div>
+              <ul class="grid gap-2">
+                <li class="flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="stroke-primary w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                  <p class="text-base md:text-lg text-black font-bold">
+                    Ensuring 100% site up guarantee.
+                  </p>
+                </li>
+                <li class="flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="stroke-primary w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                  <p class="text-base md:text-lg text-black font-bold">
+                    24/7/365 stand by the support team.
+                  </p>
+                </li>
+                <li class="flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="stroke-primary w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                  <p class="text-base md:text-lg text-black font-bold">
+                    Latest SSD based hardware support system
+                  </p>
+                </li>
+              </ul>
+              <p class="text-base md:text-lg text-black">
+                With FX VPS dedicated plan, our clients will have a wide range
+                of opportunity to choose the most suitable server according to
+                the needs. We offer four modules; DS 1, DS 2, DS 3, DS 4
+                categorized by:
+              </p>
+              <ul class="grid gap-2">
+                <li class="flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="stroke-primary w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                  <p class="text-base md:text-lg text-black font-bold">
+                    Price/monthly
+                  </p>
+                </li>
+                <li class="flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="stroke-primary w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                  <p class="text-base md:text-lg text-black font-bold">
+                    CPU feature
+                  </p>
+                </li>
+                <li class="flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="stroke-primary w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                  <p class="text-base md:text-lg text-black font-bold">
+                    Traffic range
+                  </p>
+                </li>
+                <li class="flex gap-3 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="stroke-primary w-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                  <p class="text-base md:text-lg text-black font-bold">
+                    RAM size.
+                  </p>
+                </li>
+              </ul>
+              <div
+                class="sm:flex-row sm:items-center flex flex-col justify-start items-start gap-3 sm:gap-4"
+              >
+                <a
+                  href="#"
+                  class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-lg font-normal text-black"
+                >
+                  <span
+                    class="flex h-full w-full items-center gap-2 rounded-full bg-white py-2 px-4 sm:py-3.5 transition-all group-hover:bg-transparent md:px-8 lg:px-10"
+                  >
+                    <span class="group-hover:text-white"
+                      >View Dedicated Server</span
+                    >
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-primary hover:font-bold p-1 text-lg font-normal text-black"
+                >
+                  Register Now
+                </a>
+              </div>
+            </div>
+            <div class="w-full md:w-5/12">
+              <figure class="px-6 md:px-0 md:-mr-6 lg:-mr-14 2xl:-mr-44">
+                <img class="w-full" src="./images/img-1.svg" alt="img" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for Questions section  -->
+      <section class="sm:px-4 pb-8 sm:pb-14 pt-14 lg:pt-20 overflow-x-clip">
+        <div class="container mx-auto space-y-12">
+          <h2
+            class="text-[28px] lg:text-[2.6rem] leading-[1.3] font-fredoka text-black text-center"
+          >
+            Frequently Asked
+            <span
+              class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+            >
+              Questions</span
+            >
+          </h2>
+          <div
+            class="px-4 py-10 xl:pl-14 lg:pr-16 xl:pr-24 md:py-20 sm:rounded-[3rem] bg-opacity-50 bg-white border border-gray-300 relative"
+          >
+            <figure
+              class="flex justify-center md:absolute md:-top-20 md:-right-20 pb-8 md:pb-0"
+            >
+              <img
+                src="./images/chat-dynamic-color.png"
+                alt="chat-dynamic-color.png"
+              />
+            </figure>
+            <div
+              class="w-full flex-col lg:flex-row flex gap-4 xl:gap-x-8 xl:gap-y-4 items-start"
+            >
+              <div class="grid gap-1 w-full lg:w-1/2">
+                <div class="group space-y-4">
+                  <button
+                    type="button"
+                    class="accordion-btn px-3 sm:px-6 py-3 gap-4 w-full rounded-3xl bg-white border border-green-300 flex justify-between items-center"
+                  >
+                    <span class="font-bold text-base xl:text-lg text-black">
+                      What is Forex VPS?
+                    </span>
+                    <span class="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-minus hidden group-[.open]:block"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-plus group-[.open]:hidden"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    class="overflow-hidden transition-all duration-300 max-h-0"
+                  >
+                    <div
+                      class="rounded-3xl border border-gray-300 bg-white p-8 mb-3"
+                    >
+                      <p class="text-base md:text-lg text-black">
+                        The term “FOREX VPS” involves a virtual private server
+                        system that is mainly applied in forex trading.
+                        Basically, these servers host MT4/MT5 trading platforms
+                        24/7 uninterruptedly. In forex VPS service the hardware
+                        resources are allotted under a vast server arrangement.
+                        Forex servers get optimized for meta-trading & latency
+                        for conducting rigorous trading activities. VPS service
+                        providers arrange respective plans for the individual
+                        requirements based on disk space, CPU capacity, latency
+                        & much more. Dedicated server plans are very common
+                        nowadays because most of the pro traders prefer them
+                        over other server policy.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="group space-y-4">
+                  <button
+                    type="button"
+                    class="accordion-btn px-3 sm:px-6 py-3 gap-4 w-full rounded-3xl bg-white border border-green-300 flex justify-between items-center"
+                  >
+                    <span class="font-bold text-base xl:text-lg text-black">
+                      I have no technical skill, can you help me for setup ?
+                    </span>
+                    <span class="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-minus hidden group-[.open]:block"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-plus group-[.open]:hidden"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    class="overflow-hidden transition-all duration-300 max-h-0"
+                  >
+                    <div
+                      class="rounded-3xl border border-gray-300 bg-white p-8 mb-3"
+                    >
+                      <p class="text-base md:text-lg text-black">
+                        The term “FOREX VPS” involves a virtual private server
+                        system that is mainly applied in forex trading.
+                        Basically, these servers host MT4/MT5 trading platforms
+                        24/7 uninterruptedly. In forex VPS service the hardware
+                        resources are allotted under a vast server arrangement.
+                        Forex servers get optimized for meta-trading & latency
+                        for conducting rigorous trading activities. VPS service
+                        providers arrange respective plans for the individual
+                        requirements based on disk space, CPU capacity, latency
+                        & much more. Dedicated server plans are very common
+                        nowadays because most of the pro traders prefer them
+                        over other server policy.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="group space-y-4">
+                  <button
+                    type="button"
+                    class="accordion-btn px-3 sm:px-6 py-3 gap-4 w-full rounded-3xl bg-white border border-green-300 flex justify-between items-center"
+                  >
+                    <span class="font-bold text-base xl:text-lg text-black">
+                      How long does it take to setup my account?
+                    </span>
+                    <span class="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-minus hidden group-[.open]:block"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-plus group-[.open]:hidden"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    class="overflow-hidden transition-all duration-300 max-h-0"
+                  >
+                    <div
+                      class="rounded-3xl border border-gray-300 bg-white p-8 mb-3"
+                    >
+                      <p class="text-base md:text-lg text-black">
+                        As of March of 2022, we have completed our 5 section
+                        programs for the following fields: Dental, Optometry, &
+                        Pharmacy. We are currently working on completing our
+                        Medical and PA programs, to stay updated click one of
+                        the following links. <strong>Medical - PA</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid gap-1 w-full lg:w-1/2">
+                <div class="group space-y-4">
+                  <button
+                    type="button"
+                    class="accordion-btn px-3 sm:px-6 py-3 gap-4 w-full rounded-3xl bg-white border border-green-300 flex justify-between items-center"
+                  >
+                    <span class="font-bold text-base xl:text-lg text-black">
+                      What type of payment do you accept ?
+                    </span>
+                    <span class="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-minus hidden group-[.open]:block"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-plus group-[.open]:hidden"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    class="overflow-hidden transition-all duration-300 max-h-0"
+                  >
+                    <div
+                      class="rounded-3xl border border-gray-300 bg-white p-8 mb-3"
+                    >
+                      <p class="text-base md:text-lg text-black">
+                        As of March of 2022, we have completed our 5 section
+                        programs for the following fields: Dental, Optometry, &
+                        Pharmacy. We are currently working on completing our
+                        Medical and PA programs, to stay updated click one of
+                        the following links. <strong>Medical - PA</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="group space-y-4">
+                  <button
+                    type="button"
+                    class="accordion-btn px-3 sm:px-6 py-3 gap-4 w-full rounded-3xl bg-white border border-green-300 flex justify-between items-center"
+                  >
+                    <span class="font-bold text-base xl:text-lg text-black">
+                      Can I upgrade my plan later?
+                    </span>
+                    <span class="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-minus hidden group-[.open]:block"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-plus group-[.open]:hidden"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    class="overflow-hidden transition-all duration-300 max-h-0"
+                  >
+                    <div
+                      class="rounded-3xl border border-gray-300 bg-white p-8 mb-3"
+                    >
+                      <p class="text-base md:text-lg text-black">
+                        Guideology was created by graduate students & advisors
+                        to help make the process of getting into your dream
+                        school as simple as possible. Our goal is to provide
+                        everything students need under one easy to manage
+                        platform. To learn more, visit our
+                        <strong>Mission Statement</strong> page.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="group space-y-4">
+                  <button
+                    type="button"
+                    class="accordion-btn px-3 sm:px-6 py-3 gap-4 w-full rounded-3xl bg-white border border-green-300 flex justify-between items-center"
+                  >
+                    <span class="font-bold text-base xl:text-lg text-black">
+                      What is the advantages of using fx VPS over PC ?
+                    </span>
+                    <span class="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-minus hidden group-[.open]:block"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-plus group-[.open]:hidden"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    class="overflow-hidden transition-all duration-300 max-h-0"
+                  >
+                    <div
+                      class="rounded-3xl border border-gray-300 bg-white p-8 mb-3"
+                    >
+                      <p class="text-base md:text-lg text-black">
+                        Guideology was created by graduate students & advisors
+                        to help make the process of getting into your dream
+                        school as simple as possible. Our goal is to provide
+                        everything students need under one easy to manage
+                        platform. To learn more, visit our
+                        <strong>Mission Statement</strong> page.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for Everything You Should Know About Foxex VPS section  -->
+      <section
+        class="px-4 pb-8 sm:pb-12 pt-14 lg:pt-16 overflow-x-clip relative"
+      >
+        <img
+          class="absolute top-1/2 -translate-y-1/2 left-0 opacity-20 md:block hidden"
+          src="./images/bg-verify.png"
+          alt="vg-verify"
+        />
+        <div class="container relative mx-auto space-y-12">
+          <h2
+            class="text-[28px] lg:text-[2.6rem] leading-[1.3] font-fredoka text-black text-left"
+          >
+            Everything You Should Know About
+            <span
+              class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+            >
+              Foxex VPS</span
+            >
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-black">
+                How Does a VPS Function?
+              </h3>
+              <p class="text-base lg:text-lg text-black !leading-[1.5]">
+                VPS is the acronym for VIRTUAL PRIVATE SERVER. Generally, a VPS
+                system run by a separate operating system & allocated resources
+                within a larger server system. This service is mainly required
+                for hosting purpose backed by big chunks of hardware system
+                placed in specific data centers or locations. Most of the VPS
+                service provider presents customizable options for its users.
+                When the trader selects a provider, that gives full access to
+                its plans comprising with the maximum amount of RAM size,
+                bandwidth & server capacity so the client can pick up the most
+                appropriate one for trading.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-black">
+                Why Use a Forex VPS For Trading?
+              </h3>
+              <p class="text-base lg:text-lg text-black !leading-[1.5]">
+                Redundancy, usability & availability are the main reasons to
+                introduce a VPS service in forex trading. There are some other
+                purposes that we can extract. -Specially Optimized for
+                Meta-trading: VPS servers are developed for running MT4/MT5
+                trading accounts without any disturbance or failure. -Latency:
+                The ultra-low latency required for forex trading cannot be
+                maintained typical ISP’s. Only the latency optimized servers are
+                capable to produce lightning fast business execution. -Back-up &
+                Security In VPS hosting service a continuous data backup process
+                will be running simultaneously with your trading.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-black">
+                How To Set-up Forex VPS?
+              </h3>
+              <p class="text-base lg:text-lg text-black !leading-[1.5]">
+                A user doesn’t need extra technical proficiency to run his/her
+                MT4/mt5 account on a VPS server. It’s just required some simple
+                steps to follow.
+              </p>
+              <ul class="grid gap-1">
+                <li class="text-base lg:text-lg text-black !leading-[1.5]">
+                  <strong>Step 1: </strong> Download the MT4/MT5 directly from
+                  the official website.
+                </li>
+                <li class="text-base lg:text-lg text-black !leading-[1.5]">
+                  <strong>Step 2: </strong> Select “Remote Desktop Protocol”
+                  from the search bar.
+                </li>
+                <li class="text-base lg:text-lg text-black !leading-[1.5]">
+                  <strong>Step 3: </strong> Enter the login credential provided
+                  by the VPS service provider.
+                </li>
+                <li class="text-base lg:text-lg text-black !leading-[1.5]">
+                  <strong>Step 4: </strong> Install the downloaded MT4/MT5
+                  properly in the remote desktop.
+                </li>
+                <li class="text-base lg:text-lg text-black !leading-[1.5]">
+                  <strong>Step 5: </strong> After successful installing enter
+                  the login details that were provided from your brokerage
+                  house. On successful completion of these steps, your MT4/MT5
+                  platform hosting will be initiated.
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-black">
+                How Does a VPS Function?
+              </h3>
+              <p class="text-base lg:text-lg text-black !leading-[1.5]">
+                VPS is the acronym for VIRTUAL PRIVATE SERVER. Generally, a VPS
+                system run by a separate operating system & allocated resources
+                within a larger server system. This service is mainly required
+                for hosting purpose backed by big chunks of hardware system
+                placed in specific data centers or locations. Most of the VPS
+                service provider presents customizable options for its users.
+                When the trader selects a provider, that gives full access to
+                its plans comprising with the maximum amount of RAM size,
+                bandwidth & server capacity so the client can pick up the most
+                appropriate one for trading.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-black">
+                How Does a VPS Function?
+              </h3>
+              <p class="text-base lg:text-lg text-black !leading-[1.5]">
+                VPS is the acronym for VIRTUAL PRIVATE SERVER. Generally, a VPS
+                system run by a separate operating system & allocated resources
+                within a larger server system. This service is mainly required
+                for hosting purpose backed by big chunks of hardware system
+                placed in specific data centers or locations. Most of the VPS
+                service provider presents customizable options for its users.
+                When the trader selects a provider, that gives full access to
+                its plans comprising with the maximum amount of RAM size,
+                bandwidth & server capacity so the client can pick up the most
+                appropriate one for trading.
+              </p>
+            </div>
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-black">
+                How Does a VPS Function?
+              </h3>
+              <p class="text-base lg:text-lg text-black !leading-[1.5]">
+                VPS is the acronym for VIRTUAL PRIVATE SERVER. Generally, a VPS
+                system run by a separate operating system & allocated resources
+                within a larger server system. This service is mainly required
+                for hosting purpose backed by big chunks of hardware system
+                placed in specific data centers or locations. Most of the VPS
+                service provider presents customizable options for its users.
+                When the trader selects a provider, that gives full access to
+                its plans comprising with the maximum amount of RAM size,
+                bandwidth & server capacity so the client can pick up the most
+                appropriate one for trading.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- start coding for Questions section  -->
+      <section class="sm:px-4 pb-14 sm:pb-32 pt-8 lg:pt-12 overflow-x-clip">
+        <div class="container mx-auto space-y-12">
+          <div
+            class="px-4 py-10 xl:pl-14 flex flex-col-reverse md:flex-row lg:pr-16 xl:pr-24 md:py-20 sm:rounded-[3rem] bg-opacity-50 bg-white border border-gray-300 relative"
+          >
+            <div class="space-y-7 w-full md:w-8/12">
+              <div class="space-y-3">
+                <h2
+                  class="text-[28px] lg:text-[2.6rem] leading-[1.3] font-fredoka text-black text-left"
+                >
+                  Still Need Help For
+                  <span
+                    class="bg-clip-text bg-gradient-to-r from-primary to-secondary text-transparent"
+                  >
+                    Deciding</span
+                  >
+                </h2>
+                <p class="text-base md:text-lg text-black !leading-[1.5]">
+                  Talk to one of out VPS specialist who will review your needs
+                  and propose a tailored hosting solution that will match your
+                  spacific business reality and needs.
+                </p>
+              </div>
+              <div
+                class="sm:flex-row flex flex-col justify-start items-start gap-4 pt-2"
+              >
+                <a
+                  href="#"
+                  class="group rounded-full bg-gradient-to-r from-primary to-secondary p-1 text-xl font-normal text-black"
+                >
+                  <span
+                    class="flex h-full w-full items-center gap-2 rounded-full bg-white py-2 px-5 sm:py-3.5 transition-all group-hover:bg-transparent md:px-7"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-6 h-6 group-hover:stroke-white"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                      />
+                    </svg>
+
+                    <span class="group-hover:text-white">
+                      Chat with an Expert!</span
+                    >
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  class="hover:text-primary flex items-center gap-3 hover:font-bold p-1 text-xl font-normal text-black"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                    />
+                  </svg>
+                  View Services
+                </a>
+              </div>
+              <div class="space-y-4 max-w-[700px]">
+                <h4 class="font-bold text-black text-lg md:text-xl">
+                  Subscribe To Our Newsletter!
+                </h4>
+                <div class="flex gap-5 items-center">
+                  <input
+                    type="text"
+                    placeholder="Enter your email"
+                    class="px-5 w-full placeholder:text-gray-400 py-3 text-lg text-black rounded-2xl border border-gray-300"
+                  />
+                  <button
+                    type="submit"
+                    class="px-5 py-4 bg-gradient-to-r from-primary to-secondary rounded-2xl hover:bg-opacity-75"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-send stroke-white"
+                    >
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center w-full md:w-4/12">
+              <figure class="">
+                <img
+                  src="./images/rocket-dynamic-premium.png"
+                  alt="rocket-dynamic-premium.png"
+                />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-gray-400 pt-12 md:pt-20">
+      <div class="px-4">
+        <div class="container mx-auto">
+          <div
+            class="w-full xl:px-24 grid grid-cols-1 sm:flex flex-wrap lg:flex-nowrap lg:justify-between gap-7 xl:gap-10 pb-8 sm:pb-14"
+          >
+            <div class="space-y-4 sm:space-y-6">
+              <h2 class="text-lg md:text-xl font-bold text-black">
+                OUR SERVICES
+              </h2>
+              <ul class="grid gap-2">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Regular VPS</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                  >
+                    Managed Dedd. Server</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Exclusive VPS</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Latency Optimized VPS</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Best Forex VPS</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4 sm:space-y-6">
+              <h2 class="text-lg md:text-xl font-bold text-black">COMPANY</h2>
+              <ul class="grid gap-2">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Terms Of Service</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4 sm:space-y-6">
+              <h2 class="text-lg md:text-xl font-bold text-black">
+                BROKERAGE SOLUTIONS
+              </h2>
+              <ul class="grid gap-2">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >FOREX CRM</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >MT4/MT5 Manager API</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Auto Trading Copy Trading</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4 sm:space-y-6">
+              <h2 class="text-lg md:text-xl font-bold text-black">CONNECT</h2>
+              <ul class="grid gap-2">
+                <li class="flex items-center gap-2">
+                  <img class="w-5" src="./images/facebook.png" alt="facebook" />
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Facebook</a
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <img class="w-5" src="./images/twitter.png" alt="twitter" />
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Twitter</a
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <img class="w-5" src="./images/linkedin.png" alt="linkedin" />
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Linkedin</a
+                  >
+                </li>
+                <li class="flex items-center gap-2">
+                  <img class="w-5" src="./images/youtube.png" alt="youtube" />
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                    >Youtube</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4 sm:space-y-6">
+              <h2 class="text-lg md:text-xl font-bold text-black">WE ACCEPT</h2>
+              <ul class="flex gap-3">
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                  >
+                    <img src="./images/pay-1.png" alt="pay-one" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                  >
+                    <img src="./images/pay-2.png" alt="pay-two" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                  >
+                    <img src="./images/pay-3.png" alt="pay-three" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="inline-block text-base lg:text-lg text-black hover:underline"
+                  >
+                    <img src="./images/pay-4.png" alt="pay-four" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-6 border-t border-gray-400 px-4">
+        <p class="text-base md:text-lg text-center">
+          Copyright 2016 - 2017
+          <a href="#" class="font-semibold text-secondary">Fxvps.pro </a> All
+          Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/custom.js"></script>
 </html>
