@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
+<html lang="en" class="scroll-smooth">
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,11 +15,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/custom.js') }}"></script>
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <!-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> -->
 
-</head>
-    <body
+  </head>
+  <body
     class="font-quicksand font-normal bg-[url(../images/homepage-background.png)] bg-cover bg-no-repeat"
   >
     <div class="py-3 sm:py-4 bg-gradient-to-r from-primary to-secondary px-4">
@@ -50,7 +53,7 @@
           <ul class="sm:gap-3 flex gap-1.5 flex-wrap md:gap-6 items-center">
             <li>
               <a
-                href="#"
+                href="/blog"
                 class="flex gap-1.5 sm:gap-2 text-white items-center text-sm sm:text-base lg:text-lg"
               >
                 <img src="./images/blogs.svg" alt="blogs.svg" />
@@ -85,7 +88,7 @@
       <div class="px-4">
         <div class="mx-auto container">
           <div class="relative flex items-center justify-between gap-5 py-4">
-            <a href="#" class="relative shrink-0">
+            <a href="/" classs="relative shrink-0">
               <figure>
                 <img class="w-32" src="./images/logo.svg" alt="logo.svg" />
               </figure>
@@ -118,32 +121,32 @@
                 class="flex flex-col gap-8 xl:flex-row xl:items-center xl:gap-5 2xl:gap-10"
               >
                 <li>
-                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                  <a href="/pricing" class="font-bold text-base xl:text-xl text-black"
                     >VPS PLANS
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                  <a href="/ultra-low-latency-vps" class="font-bold text-base xl:text-xl text-black"
                     >BROKER LATENCY</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                  <a href="/pricing" class="font-bold text-base xl:text-xl text-black"
                     >EXCL VPS</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                  <a href="/dedicated-server" class="font-bold text-base xl:text-xl text-black"
                     >DEDICATED SERVER</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                  <a href="/affiliate" class="font-bold text-base xl:text-xl text-black"
                     >AFFILIATE</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="font-bold text-base xl:text-xl text-black"
+                  <a href="/free-vps" class="font-bold text-base xl:text-xl text-black"
                     >FREE VPS</a
                   >
                 </li>
@@ -2037,14 +2040,14 @@
               <ul class="grid gap-2">
                 <li>
                   <a
-                    href="#"
+                    href="/pricing"
                     class="inline-block text-base lg:text-lg text-black hover:underline"
                     >Regular VPS</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/dedicated-server"
                     class="inline-block text-base lg:text-lg text-black hover:underline"
                   >
                     Managed Dedd. Server</a
@@ -2059,14 +2062,14 @@
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/ultra-low-latency-vps"
                     class="inline-block text-base lg:text-lg text-black hover:underline"
                     >Latency Optimized VPS</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="best-forex-vps"
                     class="inline-block text-base lg:text-lg text-black hover:underline"
                     >Best Forex VPS</a
                   >
@@ -2078,14 +2081,14 @@
               <ul class="grid gap-2">
                 <li>
                   <a
-                    href="#"
+                    href="/privacy-policy"
                     class="inline-block text-base lg:text-lg text-black hover:underline"
                     >Privacy Policy</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/terms-and-conditions"
                     class="inline-block text-base lg:text-lg text-black hover:underline"
                     >Terms Of Service</a
                   >
@@ -2214,4 +2217,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/custom.js"></script>
+  </body>
 </html>
